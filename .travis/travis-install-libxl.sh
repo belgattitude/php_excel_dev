@@ -70,7 +70,6 @@ compile_phpexcel_extension() {
 
 install_on_travis() {
     echo "extension=${EXT_DIR}/excel.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-
 }
 
 install_libxl;
