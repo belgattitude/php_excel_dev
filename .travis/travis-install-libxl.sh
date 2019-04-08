@@ -41,7 +41,14 @@ PHP_EXCEL_ARCHIVE_DIR=php_excel-php7
 
 install_libxl() {
     echo "Download and install LIBXL v$LIBXL_VERSION"
-    wget -O $DOWNLOAD_DIR/$LIBXL_ARCHIVE $LIBXL_URL/$LIBXL_ARCHIVE
+    if [[ -f ${LIBXL_URL/$LIBXL_ARCHIVE} ]]; then
+      # not first run
+      # curl -o ${DISTFILE} -z ${DISTFILE} -L ${URL}
+      echo "Already downloaded";
+    else
+      # first run
+      wget -O $DOWNLOAD_DIR/$LIBXL_ARCHIVE $LIBXL_URL/$LIBXL_ARCHIVE
+    fi
     tar zxvf $DOWNLOAD_DIR/$LIBXL_ARCHIVE --directory $DOWNLOAD_DIR
     mkdir -p $LIBXL_INSTALL_PATH
     cp -r $DOWNLOAD_DIR/libxl-$LIBXL_ARCHIVE_VERSION/* $LIBXL_INSTALL_PATH
