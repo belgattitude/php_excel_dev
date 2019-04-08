@@ -1,0 +1,23 @@
+composer.lock
+/vendor
+# For various tools
+.php_cs.cache
+.buildpath
+.DS_Store
+.*.sw*
+.*.un~
+*.cache
+.project
+.settings/
+.idea
+# For PHPUnit
+/build
+/phpunit*.xml
+# For Tests
+/tests/tmp/*
+!/tests/tmp/.gitkeep
+# For Travis
+infection-log.txt
+.travis/ffmpeg-release-amd64-static
+.travis/downloads
+

@@ -1,0 +1,46 @@
+language: php
+
+cache:
+    directories:
+        - vendor
+        - $HOME/.composer/cache
+        - .travis/downloads
+        - .travis/ffmpeg-release-64bit-static
+
+before_install:
+  - |
+    if [ "x$REMOVE_QA" = "xyes" ]; then
+      composer remove friendsofphp/php-cs-fixer phpstan/phpstan phpstan/phpstan-phpunit phpstan/phpstan-strict-rules --dev --no-interaction $COMPOSER_ARGS;
+    fi
+  - |
+    if [ "x$XDEBUG" != "xyes" ]; then
+      phpenv config-rm xdebug.ini || true
+    fi
+  - |
+    if [ "x$INSTALL_LIBXL" == "xyes" ]; then
+      .travis/travis-install-libxl.sh
+    fi
+
+install:
+  - |
+    if [[ "x$DEPS" == "xlowest" ]]; then
+      travis_retry composer -n update --prefer-dist --prefer-lowest --prefer-stable --no-interaction $COMPOSER_ARGS;
+    else
+      travis_retry composer -n update --prefer-dist --no-interaction $COMPOSER_ARGS;
+    fi
+
+script:
+  - ./vendor/bin/phpunit -v -c .travis/phpunit.xml
+
+jobs:
+  allow_failures:
+    - php: nightly
+
+  include:
+    - stage: PHPSTAN
+      php: 7.1
+      env: XDEBUG=yes INSTALL_LIBXL=yes REMOVE_QA=no
+      script:
+        - composer phpstan
+
+

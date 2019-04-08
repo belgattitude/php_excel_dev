@@ -1,0 +1,53 @@
+{
+    "name": "soluble/php_excel_dev",
+    "description": "LibXL - php_excel development stubs",
+    "license": "MIT",
+    "keywords": [
+        "php_excel",
+        "libxl"
+    ],
+    "homepage": "https://github.com/belgattitude/php_excel_dev",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sébastien Vanvelthem",
+            "homepage": "https://github.com/belgattitude"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev" : {
+        "captainhook/plugin-composer": "^4.0",
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "phpstan/phpstan": "^0.11.4",
+        "phpstan/phpstan-phpunit": "^0.11",
+        "phpstan/phpstan-strict-rules": "^0.11",
+        "phpunit/phpunit": "^7.4 || ^8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@phpstan"
+        ],
+        "fix": [
+            "@cs-fix"
+        ],
+        "test": "vendor/bin/phpunit",
+        "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix --using-cache=false",
+        "cs-fix": "vendor/bin/php-cs-fixer -v fix --using-cache=false",
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon src tests"
+    },
+    "archive": {
+        "exclude": [".travis", "infection.json", ".sami.php", "phpstan.neon", "tests", "docs", ".travis", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", ".php_cs", ".gitignore", "phpcs.xml"]
+    }
+}
