@@ -2,8 +2,7 @@
 #
 # Example script to install LibXL, ilia/php_excel on PHP 7.3
 #
-# @author Vanvelthem Sébastien
-# @homepage https://github.com/belgattitude
+# @author Vanvelthem Sébastien (https://github.com/belgattitude)
 #
 
 set -e
@@ -34,8 +33,6 @@ LIBXL_ARCHIVE="libxl-lin-$LIBXL_VERSION.tar.gz"
 LIBXL_INSTALL_PATH="${EXT_DIR}/libxl-$LIBXL_VERSION"
 PHP_CONFIG=`which php-config`
 PHPIZE=`which phpize`
-
-
 
 install_libxl() {
     echo "Download and install LIBXL v$LIBXL_VERSION"
@@ -68,13 +65,18 @@ compile_phpexcel_extension() {
     echo " -> compiling"
     make
     cp modules/excel.so "${EXT_DIR}/excel.so"
-    echo "Compilatation successful"
+    echo "Compilation successful"
+}
+
+install_on_travis() {
+    echo "extension=${EXT_DIR}/excel.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
 }
 
 install_libxl;
 compile_phpexcel_extension;
+install_on_travis;
 
-# Installing on travis
 
-echo "extension=${EXT_DIR}/excel.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
 
