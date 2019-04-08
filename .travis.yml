@@ -42,21 +42,13 @@ jobs:
         - composer phpstan
     - stage: PHPSTAN
       php: 7.2
-      env: XDEBUG=yes INSTALL_LIBXL=yes REMOVE_QA=no
+      env: XDEBUG=no INSTALL_LIBXL=yes REMOVE_QA=no
       script:
-        - php -v
-        - which phpize
-        - php -m
-        - php -i
         - composer phpstan
     - stage: PHPSTAN
       php: 7.1
-      env: XDEBUG=yes INSTALL_LIBXL=yes REMOVE_QA=no
+      env: XDEBUG=no INSTALL_LIBXL=yes REMOVE_QA=no
       script:
-        - php -v
-        - which phpize
-        - php -m
-        - php -i
         - composer phpstan
 
 
