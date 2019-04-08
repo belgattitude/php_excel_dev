@@ -6,38 +6,36 @@
 # @homepage https://github.com/belgattitude
 #
 
-BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-
-## SET the versions here (for PHP_VERSION, do not add 'patch' number)
-PHP_VERSION=
-# > 3.8.2 requires the use of jan-e fork, see below
-LIBXL_VERSION=3.8.2
-DOWNLOAD_DIR="${BASE_DIR}/downloads"
-EXT_DIR="${BASE_DIR}/ext"
-LIBXL_INSTALL_PATH="${EXT_DIR}/libxl-$LIBXL_VERSION"
-
 set -e
 
-# (SHOULD NOT BE EDITED)
-LIBXL_ARCHIVE_VERSION=$LIBXL_VERSION.0
-LIBXL_URL="http://www.libxl.com/download"
-LIBXL_ARCHIVE="libxl-lin-$LIBXL_VERSION.tar.gz"
+# version > 3.8.2 requires the use of jan-e fork, see below
+LIBXL_VERSION=3.8.2
 
-# (SHOULD NOT BE EDITED)
-PHP_CONFIG=`which php-config$PHP_VERSION`
-PHPIZE=`which phpize$PHP_VERSION`
-
-# (SHOULD NO BE EDITED)
 # Release 1.0.2 contains a bug regarding license
 # see https://github.com/iliaal/php_excel/issues/163
 # So we use the master branch
 PHP_EXCEL_URL=https://github.com/iliaal/php_excel/archive/php7.zip
 PHP_EXCEL_ARCHIVE_DIR=php_excel-php7
 
-# THIS FORK CONTAINS UPDATED VERSION
+# THIS FORK CONTAINS UPDATED VERSION for LIBXL > 3.8.2
 #PHP_EXCEL_URL=https://github.com/Jan-E/php_excel/archive/php7_with_pulls.zip
 #PHP_EXCEL_ARCHIVE_DIR=php_excel-php7_with_pulls
+
+
+# (SHOULD NOT BE EDITED)
+BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+DOWNLOAD_DIR="${BASE_DIR}/downloads"
+EXT_DIR="${BASE_DIR}/ext"
+
+LIBXL_ARCHIVE_VERSION=$LIBXL_VERSION.0
+LIBXL_URL="http://www.libxl.com/download"
+LIBXL_ARCHIVE="libxl-lin-$LIBXL_VERSION.tar.gz"
+LIBXL_INSTALL_PATH="${EXT_DIR}/libxl-$LIBXL_VERSION"
+PHP_CONFIG=`which php-config`
+PHPIZE=`which phpize`
+
+
 
 install_libxl() {
     echo "Download and install LIBXL v$LIBXL_VERSION"
@@ -75,6 +73,8 @@ compile_phpexcel_extension() {
 
 install_libxl;
 compile_phpexcel_extension;
+
+# Installing on travis
 
 echo "extension=${EXT_DIR}/excel.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
