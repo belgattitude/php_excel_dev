@@ -42,7 +42,6 @@ script:
 jobs:
   allow_failures:
     - php: nightly
-
   include:
     - stage: PHPSTAN
       php: 7.3
