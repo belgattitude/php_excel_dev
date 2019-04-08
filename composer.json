@@ -25,6 +25,9 @@
         "phpstan/phpstan-strict-rules": "^0.11",
         "phpunit/phpunit": "^7.4 || ^8.0"
     },
+    "conflict": {
+        "bolovsky/php_excel_stubs": "*"
+    },
     "config": {
         "optimize-autoloader": true,
         "sort-packages": true
