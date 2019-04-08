@@ -27,41 +27,38 @@ BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOWNLOAD_DIR="${BASE_DIR}/downloads"
 EXT_DIR="${BASE_DIR}/ext"
 
-LIBXL_ARCHIVE_VERSION=$LIBXL_VERSION.0
+LIBXL_ARCHIVE_VERSION=${LIBXL_VERSION}.0
 LIBXL_URL="http://www.libxl.com/download"
-LIBXL_ARCHIVE="libxl-lin-$LIBXL_VERSION.tar.gz"
-LIBXL_INSTALL_PATH="${EXT_DIR}/libxl-$LIBXL_VERSION"
+LIBXL_ARCHIVE="libxl-lin-${LIBXL_VERSION}.tar.gz"
+LIBXL_INSTALL_PATH="${EXT_DIR}/libxl-${LIBXL_VERSION}"
 PHP_CONFIG=`which php-config`
 PHPIZE=`which phpize`
 
 install_libxl() {
-    echo "Download and install LIBXL v$LIBXL_VERSION"
+    echo "Download and install LIBXL v${LIBXL_VERSION}"
     if [[ -f ${LIBXL_URL/$LIBXL_ARCHIVE} ]]; then
-      # not first run
-      # curl -o ${DISTFILE} -z ${DISTFILE} -L ${URL}
       echo "Already downloaded";
     else
-      # first run
-      wget -O $DOWNLOAD_DIR/$LIBXL_ARCHIVE $LIBXL_URL/$LIBXL_ARCHIVE
+      wget -O ${DOWNLOAD_DIR}/${LIBXL_ARCHIVE} ${LIBXL_URL}/${LIBXL_ARCHIVE}
     fi
-    tar zxvf $DOWNLOAD_DIR/$LIBXL_ARCHIVE --directory $DOWNLOAD_DIR
-    mkdir -p $LIBXL_INSTALL_PATH
-    cp -r $DOWNLOAD_DIR/libxl-$LIBXL_ARCHIVE_VERSION/* $LIBXL_INSTALL_PATH
+    tar zxvf ${DOWNLOAD_DIR}/${LIBXL_ARCHIVE} --directory ${DOWNLOAD_DIR}
+    mkdir -p ${LIBXL_INSTALL_PATH}
+    cp -r ${DOWNLOAD_DIR}/libxl-${LIBXL_ARCHIVE_VERSION}/* ${LIBXL_INSTALL_PATH}
 }
 
 compile_phpexcel_extension() {
     echo "Download, configure and compile ilia/phpexcel extension"
     echo " -> downloading"
-    wget -O $DOWNLOAD_DIR/php_excel.zip $PHP_EXCEL_URL
-    if [ -d $DOWNLOAD_DIR/$PHP_EXCEL_ARCHIVE_DIR ]; then
+    wget -O ${DOWNLOAD_DIR}/php_excel.zip ${PHP_EXCEL_URL}
+    if [ -d ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR} ]; then
 	# REMOVE previous build if exists
-	rm -r $DOWNLOAD_DIR/$PHP_EXCEL_ARCHIVE_DIR/*
+	rm -r ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR}/*
     fi
-    unzip -o $DOWNLOAD_DIR/php_excel.zip -d $DOWNLOAD_DIR
-    cd $DOWNLOAD_DIR/$PHP_EXCEL_ARCHIVE_DIR/
+    unzip -o ${DOWNLOAD_DIR}/php_excel.zip -d ${DOWNLOAD_DIR}
+    cd ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR}/
     echo " -> configuring"
-    eval "$PHPIZE"
-    ./configure --with-php-config=$PHP_CONFIG --with-libxl-incdir=$LIBXL_INSTALL_PATH/include_c/ --with-libxl-libdir=$LIBXL_INSTALL_PATH/lib64/ --with-excel=$LIBXL_INSTALL_PATH
+    eval "${PHPIZE}"
+    ./configure --with-php-config=${PHP_CONFIG} --with-libxl-incdir=${LIBXL_INSTALL_PATH}/include_c/ --with-libxl-libdir=${LIBXL_INSTALL_PATH}/lib64/ --with-excel=${LIBXL_INSTALL_PATH}
     echo " -> compiling"
     make
     cp modules/excel.so "${EXT_DIR}/excel.so"
