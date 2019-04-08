@@ -22,18 +22,10 @@ before_install:
 
 install:
   - |
-    if [ "x$REMOVE_QA" = "xyes" ]; then
-      composer remove vimeo/psalm infection/infection friendsofphp/php-cs-fixer phpstan/phpstan phpstan/phpstan-phpunit phpstan/phpstan-strict-rules jangregor/phpstan-prophecy --dev --no-interaction $COMPOSER_ARGS;
-    fi
-  - |
     if [[ "x$DEPS" == "xlowest" ]]; then
       travis_retry composer -n update --prefer-dist --prefer-lowest --prefer-stable --no-interaction $COMPOSER_ARGS;
     else
       travis_retry composer -n update --prefer-dist --no-interaction $COMPOSER_ARGS;
-    fi
-  - |
-    if [ "x$INSTALL_LIBXL" == "xyes" ]; then
-      .travis/travis-install-libxl.sh
     fi
 
 script:
@@ -50,6 +42,7 @@ jobs:
         - php -v
         - which phpize
         - php -m
+        - php -i
         - composer phpstan
 
 
