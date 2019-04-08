@@ -17,7 +17,6 @@ composer.lock
 /tests/tmp/*
 !/tests/tmp/.gitkeep
 # For Travis
-infection-log.txt
-.travis/ffmpeg-release-amd64-static
 .travis/downloads
+.travis/ext
 
