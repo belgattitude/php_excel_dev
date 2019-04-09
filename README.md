@@ -57,7 +57,7 @@ wget -qO- http://www.libxl.com/download/libxl-lin-3.8.2.tar.gz | sudo tar zxvf -
 
 ### PHP extension
 
-Download and unzip the php7 branch:
+Download and unzip the [php_excel/php7](https://github.com/iliaal/php_excel/tree/php7) branch:
 
 ```sh
 wget -qO- https://github.com/iliaal/php_excel/archive/php7.tar.gz | tar zxvf - --directory /tmp
