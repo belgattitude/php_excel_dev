@@ -4,7 +4,7 @@
 
 # LibXL php
 
-php_excel_dev provides to work with [LibXL](http://www.libxl.com) and [ilia/php_excel](https://github.com/iliaal/php_excel)   
+Provides installation notes and stubs for [LibXL](http://www.libxl.com)/[ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
 
 - [x] LibXL stubs to enable autocompletion.
 - [x] LibXL/php_excel installation instructions for linux/debian derivatives.
