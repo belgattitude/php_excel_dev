@@ -29,26 +29,25 @@ install:
     fi
 
 script:
-  - ./vendor/bin/phpunit -v -c .travis/phpunit.xml
+  - ./vendor/bin/phpunit -v
 
 jobs:
   allow_failures:
     - php: nightly
   include:
-    - stage: PHPSTAN
+    - stage: Test
       php: 7.3
       env: XDEBUG=yes INSTALL_LIBXL=yes REMOVE_QA=no
-      script:
-        - composer phpstan
-    - stage: PHPSTAN
+    - stage: Test
       php: 7.2
       env: XDEBUG=no INSTALL_LIBXL=yes REMOVE_QA=no
-      script:
-        - composer phpstan
-    - stage: PHPSTAN
+    - stage: Test
       php: 7.1
       env: XDEBUG=no INSTALL_LIBXL=yes REMOVE_QA=no
+    - stage: PHPStan & CS
+      php: 7.3
+      env: XDEBUG=no INSTALL_LIBXL=no REMOVE_QA=no
       script:
         - composer phpstan
-
+        - composer cs-check
 

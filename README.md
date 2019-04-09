@@ -4,11 +4,20 @@
 
 # LibXL php
 
+
+- [x] LibXL stubs to enable autocompletion.
+- [x] Travis [example](.travis/travis-install-libxl.sh) installation script.
+- [x] LibXL/php_excel installation instructions.
+
+# Installation
+
+> Stubs are 
+
 ```
 $ composer require soluble/php_excel_dev --dev
 ```
 
-# Install
+## LibXL
 
 ## Ubuntu/Debian
 

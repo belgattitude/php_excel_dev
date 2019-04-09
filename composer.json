@@ -20,6 +20,7 @@
     "require-dev" : {
         "captainhook/plugin-composer": "^4.0",
         "friendsofphp/php-cs-fixer": "^2.14",
+        "phpoffice/phpspreadsheet": "^1.6",
         "phpstan/phpstan": "^0.11.4",
         "phpstan/phpstan-phpunit": "^0.11",
         "phpstan/phpstan-strict-rules": "^0.11",
@@ -37,6 +38,12 @@
             "": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "ExcelE2eTests\\": "tests/e2e",
+            "ExcelTestsUtil\\": "tests/util"
+        }
+    },
     "scripts": {
         "check": [
             "@cs-check",
@@ -48,7 +55,7 @@
         "test": "vendor/bin/phpunit",
         "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix --using-cache=false",
         "cs-fix": "vendor/bin/php-cs-fixer -v fix --using-cache=false",
-        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon src"
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon src tests"
     },
     "archive": {
         "exclude": [".travis", "infection.json", ".sami.php", "phpstan.neon", "tests", "docs", ".travis", ".travis.yml", ".codeclimate.yml", ".coveralls.yml", ".scrutinizer.yml", ".php_cs", ".gitignore", "phpcs.xml"]

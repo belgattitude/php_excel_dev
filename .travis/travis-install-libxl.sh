@@ -51,18 +51,17 @@ compile_phpexcel_extension() {
     echo " -> downloading"
     wget -O ${DOWNLOAD_DIR}/php_excel.zip ${PHP_EXCEL_URL}
     if [ -d ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR} ]; then
-	# REMOVE previous build if exists
-	rm -r ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR}/*
+	    rm -r ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR}/*
     fi
     unzip -o ${DOWNLOAD_DIR}/php_excel.zip -d ${DOWNLOAD_DIR}
     cd ${DOWNLOAD_DIR}/${PHP_EXCEL_ARCHIVE_DIR}/
     echo " -> configuring"
     eval "${PHPIZE}"
     ./configure --with-php-config=${PHP_CONFIG} --with-libxl-incdir=${LIBXL_INSTALL_PATH}/include_c/ --with-libxl-libdir=${LIBXL_INSTALL_PATH}/lib64/ --with-excel=${LIBXL_INSTALL_PATH}
-    echo " -> compiling"
+    echo " -> make"
     make
     cp modules/excel.so "${EXT_DIR}/excel.so"
-    echo "Compilation successful"
+    echo "Compilation successful, extension in ${EXT_DIR}/excel.so"
 }
 
 install_on_travis() {
@@ -72,7 +71,3 @@ install_on_travis() {
 install_libxl;
 compile_phpexcel_extension;
 install_on_travis;
-
-
-
-
