@@ -11,7 +11,7 @@
 
 # Stubs
 
-```bash
+```sh
 $ composer require soluble/php_excel_dev --dev
 ```
 
@@ -30,14 +30,14 @@ installed and the php development packages installed (phpize, phpconfig).
 
 On Ubuntu:
 
-```bash 
+```sh
 sudo apt-get install php-dev
 ```
 
 > 
 > *Alternatively suffix with the php version if you're using the ondrej/php ppa:*
 >
-> ```bash
+> ```sh
 > sudo apt-get install php7.3-dev
 > ```
 >
@@ -57,7 +57,7 @@ Or make a manual installation :
 
 The [libxl](http://www.libxl.com) static binaries can easily be installed:
 
-```bash
+```sh
 sudo mkdir /opt/libxl-3.8.2;
 wget -qO- http://www.libxl.com/download/libxl-lin-3.8.2.tar.gz | sudo tar zxvf - --strip 1 --directory /opt/libxl-3.8.2
 ```
@@ -66,13 +66,13 @@ wget -qO- http://www.libxl.com/download/libxl-lin-3.8.2.tar.gz | sudo tar zxvf -
 
 Download and unzip the php7 branch:
 
-```bash
+```sh
 wget -qO- https://github.com/iliaal/php_excel/archive/php7.tar.gz | tar zxvf - --directory /tmp
 ``` 
 
 Build the extension;
 
-```bash
+```sh
 cd /tmp/php_excel-php7; 
 ./configure --with-php-config=`which php-config` \
             --with-libxl-incdir=/opt/libxl-3.8.2/include_c/ \
@@ -93,7 +93,7 @@ extension=excel.so
 
 > For ondrej/php ppa 
 >
-> ```bash
+> ```sh
 > echo "extension=excel.so" > /tmp/excel.ini;
 > sudo cp /tmp/excel.ini /etc/php/php7.3/mods-available/excel.ini; 
 > sudo phpenmod -v 7.3 excel;
