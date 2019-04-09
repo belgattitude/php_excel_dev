@@ -19,7 +19,7 @@ $ composer require soluble/php_excel_dev --dev
 > Stubs should be installed as a `--dev` dependency. The following table display
 > versions tested on travis for PHP version 7.1, 7.2 and 7.3.
 
-| Version  | LibXL   | LibXL                                                          | Note(s)                                  |
+| Version  | LibXL   | php_excel                                                      | Note(s)                                  |
 | -------- | ------- | -------------------------------------------------------------- | ---------------------------------------- |
 | 0.1      | 3.8.2   | [php7-branch](https://github.com/iliaal/php_excel/tree/php7)   | &gt; 3.8.2 seems to have license problem |
 
