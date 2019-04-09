@@ -1,10 +1,9 @@
-
 [![PHP 7.1+](https://img.shields.io/badge/php-7.1+-ff69b4.svg)](https://packagist.org/packages/belgattitude/php_excel_dev)
 [![Build Status](https://travis-ci.org/belgattitude/php_excel_dev.svg?branch=master)](https://travis-ci.org/belgattitude/php_excel_dev)
+[![Total Downloads](https://poser.pugx.org/soluble/php_excel_dev/downloads.png)](https://packagist.org/packages/soluble/php_excel_dev)
+[![License](https://poser.pugx.org/soluble/php_excel_dev/license.png)](https://github.com/belgattitude/php_excel_dev)
 
-# LibXL php
-
-Provides installation notes and stubs for [LibXL](http://www.libxl.com) / [ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
+**Installation tips** and **stubs** for [LibXL](http://www.libxl.com) / [ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
 
 - [x] LibXL stubs to enable autocompletion.
 - [x] LibXL/php_excel installation instructions for linux/debian derivatives.
