@@ -4,7 +4,7 @@
 
 # LibXL php
 
-Provides installation notes and stubs for [LibXL](http://www.libxl.com)/[ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
+Provides installation notes and stubs for [LibXL](http://www.libxl.com) / [ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
 
 - [x] LibXL stubs to enable autocompletion.
 - [x] LibXL/php_excel installation instructions for linux/debian derivatives.
@@ -43,16 +43,16 @@ On Ubuntu:
 > ```
 >
 
-Once done, you can either use one of the bash scripts to install everything automatically:
+Once done, you can either use one of the bash scripts below :
 
 | PHP  | Distribution    | Gist                                                                                                |
 | ---- | --------------- |--------------------------------------------------------------------------------------------------- |
-| 7.3  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php73.sh](https://gist.github.com/belgattitude/7af75780e13530fd2895607079499318)  |
-| 7.2  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php72.sh](https://gist.github.com/belgattitude/69d3245227d4cc284996e3f0a1bc0033)  |
-| 7.1  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php71.sh](https://gist.github.com/belgattitude/999aee8eb6bd73fd0a7367ad896c76c3)  |
+| 7.3  | Ubuntu [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php73.sh](https://gist.github.com/belgattitude/7af75780e13530fd2895607079499318)  |
+| 7.2  | Ubuntu [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php72.sh](https://gist.github.com/belgattitude/69d3245227d4cc284996e3f0a1bc0033)  |
+| 7.1  | Ubuntu [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php71.sh](https://gist.github.com/belgattitude/999aee8eb6bd73fd0a7367ad896c76c3)  |
 
 
-Or use the instructions below :
+Or make a manual installation :
  
 ## LibXL
 
