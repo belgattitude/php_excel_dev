@@ -5,10 +5,6 @@
 
 **Installation tips** and **stubs** for [LibXL](http://www.libxl.com) / [ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
 
-- [x] LibXL stubs to enable autocompletion.
-- [x] LibXL/php_excel installation instructions for linux/debian derivatives.
-- [x] Travis [example](.travis/travis-install-libxl.sh) installation script.
-
 #### Stubs
 
 To enable autocompletion `composer require soluble/php_excel_dev --dev`
