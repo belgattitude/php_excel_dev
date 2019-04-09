@@ -11,7 +11,7 @@
 
 # Stubs
 
-```
+```bash
 $ composer require soluble/php_excel_dev --dev
 ```
 
