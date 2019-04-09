@@ -13,8 +13,7 @@
 
 To enable autocompletion `composer require soluble/php_excel_dev --dev`
 
-> Stubs should be installed as a `--dev` dependency. The following table display
-> versions tested on travis for PHP version 7.1, 7.2 and 7.3.
+> Stubs should be installed as a `--dev` dependency.
 
 
 #### Install 
