@@ -45,11 +45,11 @@ On Ubuntu:
 
 Once done, you can either use one of the bash scripts to install everything automatically:
 
-| Version     | Gist                                                                                                |
-| ----------- | --------------------------------------------------------------------------------------------------- |
-| PHP7.3      | [install_phpexcel_php73.sh](https://gist.github.com/belgattitude/7af75780e13530fd2895607079499318)  |
-| PHP7.2      | [install_phpexcel_php72.sh](https://gist.github.com/belgattitude/69d3245227d4cc284996e3f0a1bc0033)  |
-| PHP7.1      | [install_phpexcel_php71.sh](https://gist.github.com/belgattitude/999aee8eb6bd73fd0a7367ad896c76c3)  |
+| PHP  | Distribution    | Gist                                                                                                |
+| ---- | --------------- |--------------------------------------------------------------------------------------------------- |
+| 7.3  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php73.sh](https://gist.github.com/belgattitude/7af75780e13530fd2895607079499318)  |
+| 7.2  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php72.sh](https://gist.github.com/belgattitude/69d3245227d4cc284996e3f0a1bc0033)  |
+| 7.1  | [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php71.sh](https://gist.github.com/belgattitude/999aee8eb6bd73fd0a7367ad896c76c3)  |
 
 
 Or use the instructions below :
