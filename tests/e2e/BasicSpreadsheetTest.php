@@ -30,7 +30,7 @@ class BasicSpreadsheetTest extends TestCase
             unlink($output);
         }
 
-        $book = new \ExcelBook('[unlicenced]', '[emptykey]', false);
+        $book = new \ExcelBook('[unlicenced]', '[emptykey]', true);
         $book->setLocale('UTF-8');
         $sheet = $book->addSheet('Sheet');
 
