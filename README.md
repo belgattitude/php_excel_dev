@@ -4,33 +4,32 @@
 
 # LibXL php
 
+php_excel_dev provides to work with [LibXL](http://www.libxl.com) and [ilia/php_excel](https://github.com/iliaal/php_excel)   
 
 - [x] LibXL stubs to enable autocompletion.
+- [x] LibXL/php_excel installation instructions for linux/debian derivatives.
 - [x] Travis [example](.travis/travis-install-libxl.sh) installation script.
-- [x] LibXL/php_excel installation instructions.
 
-# Installation
-
-> Stubs are 
+# Stubs
 
 ```
 $ composer require soluble/php_excel_dev --dev
 ```
 
+> Stubs should be installed as a `--dev` dependency. The following table display
+> versions tested on travis for PHP version 7.1, 7.2 and 7.3.
+
+| Version  | LibXL   | LibXL                                                          | Note(s)                                  |
+| -------- | ------- | -------------------------------------------------------------- | ---------------------------------------- |
+| 0.1      | 3.8.2   | [php7-branch](https://github.com/iliaal/php_excel/tree/php7)   | &gt; 3.8.2 seems to have license problem |
+
+
+
+# Install
+
 ## LibXL
 
-## Ubuntu/Debian
-
-To fullfill installation on ubuntu/debian derivatives ensure
-that the following packages are installed:
-
-```bash
-sudo apt install tar 
-``` 
-
-## LibXL
-
-The [libxl](http://www.libxl.com) library can be installed:
+The [libxl](http://www.libxl.com) static binaries can easily be installed:
 
 ```bash
 sudo mkdir /opt/libxl-3.8.2;
@@ -40,8 +39,11 @@ wget -qO- http://www.libxl.com/download/libxl-lin-3.8.2.tar.gz | sudo tar zxvf -
 
 ## PHP extension
 
-### PHP 7.1
+[ilia/php_excel](https://github.com/iliaal/php_excel) must be compiled and installed in your php.ini:
 
-### PHP 7.2
+> Please be sure to have
+> ```bash 
+> sudo apt
+> ```
 
-### PHP 7.3
+
