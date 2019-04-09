@@ -31,10 +31,10 @@ installed and the php development packages installed (phpize, phpconfig).
 
 On Ubuntu:
 
->
-> ```bash 
-> sudo apt-get install php-dev
-> ```
+```bash 
+sudo apt-get install php-dev
+```
+
 > 
 > *Alternatively suffix with the php version if you're using the ondrej/php ppa:*
 >
