@@ -7,19 +7,19 @@
 
 ## Stubs
 
-To enable autocompletion `composer require soluble/php_excel_dev --dev`
+Useful to enable autocompletion in your project `composer require soluble/php_excel_dev --dev`
 
 > Stubs should be installed as a `--dev` dependency.
 
 
 ## LibXL install 
 
-### Automatic installation
-
 In order to compile the [iliaal/php_excel](https://github.com/iliaal/php_excel) you must have libXL 
 installed and the php development packages installed (phpize, phpconfig).
 
-On Ubuntu:
+### Automatic installation
+
+On Ubuntu, ensure you have the `php-dev` package installed.
 
 ```sh
 sudo apt-get install php-dev
