@@ -3,18 +3,20 @@
 [![Total Downloads](https://poser.pugx.org/soluble/php_excel_dev/downloads.png)](https://packagist.org/packages/soluble/php_excel_dev)
 [![License](https://poser.pugx.org/soluble/php_excel_dev/license.png)](https://github.com/belgattitude/php_excel_dev)
 
-**Installation tips** and **stubs** for [LibXL](http://www.libxl.com) / [ilia/php_excel](https://github.com/iliaal/php_excel) php extension.   
+**Installation tips**, **stubs** and **checker** for [LibXL](http://www.libxl.com) / [iliaal/php_excel](https://github.com/iliaal/php_excel) php extension.   
 
-#### Stubs
+## Stubs
 
 To enable autocompletion `composer require soluble/php_excel_dev --dev`
 
 > Stubs should be installed as a `--dev` dependency.
 
 
-#### Install 
+## LibXL install 
 
-In order to compile the [ilia/php_excel](https://github.com/iliaal/php_excel) you must have libXL 
+### Automatic installation
+
+In order to compile the [iliaal/php_excel](https://github.com/iliaal/php_excel) you must have libXL 
 installed and the php development packages installed (phpize, phpconfig).
 
 On Ubuntu:
@@ -40,9 +42,12 @@ Once done, you can either use one of the bash scripts below :
 | 7.1  | Ubuntu [ondrej/php](https://launchpad.net/~ondrej/+archive/ubuntu/php) ppa  | [install_phpexcel_php71.sh](https://gist.github.com/belgattitude/999aee8eb6bd73fd0a7367ad896c76c3)  |
 | 7.x  | For Travis CI | [travis-install-libxl.sh](.travis/travis-install-libxl.sh) |
 
-Or make a manual installation :
+
+> Be sure the extension is loaded (in your php.ini) or type `phpenmod excel`.
+
+### Manual installation 
  
-### LibXL
+#### LibXL
 
 The [libxl](http://www.libxl.com) static binaries can easily be installed:
 
@@ -51,7 +56,7 @@ sudo mkdir /opt/libxl-3.8.2;
 wget -qO- http://www.libxl.com/download/libxl-lin-3.8.2.tar.gz | sudo tar zxvf - --strip 1 --directory /opt/libxl-3.8.2
 ```
 
-### PHP extension
+#### PHP extension
 
 Download and unzip the [php_excel/php7](https://github.com/iliaal/php_excel/tree/php7) branch:
 

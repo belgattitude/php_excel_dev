@@ -14,14 +14,18 @@
             "homepage": "https://github.com/belgattitude"
         }
     ],
+    "bin": [
+        "bin/check_phpexcel_install.sh",
+        "bin/check_phpexcel_install.php"
+    ],
     "require": {
         "php": "^7.1"
     },
     "require-dev" : {
         "captainhook/plugin-composer": "^4.0",
-        "friendsofphp/php-cs-fixer": "^2.14",
-        "phpoffice/phpspreadsheet": "^1.6",
-        "phpstan/phpstan": "^0.11.4",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpoffice/phpspreadsheet": "^1.9",
+        "phpstan/phpstan": "^0.11.15",
         "phpstan/phpstan-phpunit": "^0.11",
         "phpstan/phpstan-strict-rules": "^0.11",
         "phpunit/phpunit": "^7.4 || ^8.0"
@@ -53,6 +57,7 @@
             "@cs-fix"
         ],
         "test": "vendor/bin/phpunit",
+        "check:extension":"bin/check_phpexcel_install.php",
         "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix --using-cache=false",
         "cs-fix": "vendor/bin/php-cs-fixer -v fix --using-cache=false",
         "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon src tests"
