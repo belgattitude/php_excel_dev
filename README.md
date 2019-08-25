@@ -11,13 +11,10 @@ Useful to enable autocompletion in your project `composer require soluble/php_ex
 
 > Stubs should be installed as a `--dev` dependency.
 
-
 ## LibXL install 
 
 In order to compile the [iliaal/php_excel](https://github.com/iliaal/php_excel) you must have libXL 
 installed and the php development packages installed (phpize, phpconfig).
-
-### Automatic installation
 
 On Ubuntu, ensure you have the `php-dev` package installed.
 
@@ -33,7 +30,9 @@ sudo apt-get install php-dev
 > ```
 >
 
-Once done, you can either use one of the bash scripts below :
+### Automated installation scripts
+
+You can either use one of the bash scripts below :
 
 | PHP  | Distribution    | Gist                                                                                                |
 | ---- | --------------- |--------------------------------------------------------------------------------------------------- |
@@ -94,8 +93,24 @@ extension=excel.so
 >```
 >
 
+## Checks
+
+A convenience script to check installation can be run from composer
+
+```bash
+$ composer check:libxl -- <license name> <license key>
+```
+
+or directly from php
+ 
+```bash
+$ ./bin/heck_phpexcel_install.sh <license name> <license key> 
+```
+
+It checks for correctly loaded extension and valid license. 
+
 ## Versions
 
 | Version  | LibXL   | php_excel                                                      | Note(s)                                  |
 | -------- | ------- | -------------------------------------------------------------- | ---------------------------------------- |
-| 0.1      | 3.8.2   | [php7-branch](https://github.com/iliaal/php_excel/tree/php7)   | &gt; 3.8.2 seems to have license problem |
+| 0.1.x    | 3.8.2   | [php7-branch](https://github.com/iliaal/php_excel/tree/php7)   | &gt; 3.8.2 seems to have license problem |

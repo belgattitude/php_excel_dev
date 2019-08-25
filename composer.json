@@ -57,7 +57,7 @@
             "@cs-fix"
         ],
         "test": "vendor/bin/phpunit",
-        "check:extension":"bin/check_phpexcel_install.php",
+        "check:libxl":"bin/check_phpexcel_install.php",
         "cs-check": "vendor/bin/php-cs-fixer --diff --dry-run -v fix --using-cache=false",
         "cs-fix": "vendor/bin/php-cs-fixer -v fix --using-cache=false",
         "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon src tests"
