@@ -104,7 +104,7 @@ $ composer check:libxl -- <license name> <license key>
 or directly from php
  
 ```bash
-$ ./bin/heck_phpexcel_install.sh <license name> <license key> 
+$ ./bin/check_phpexcel_install.sh <license name> <license key> 
 ```
 
 It checks for correctly loaded extension and valid license. 
